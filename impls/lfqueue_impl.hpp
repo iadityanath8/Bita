@@ -77,7 +77,7 @@ namespace Bita{
           tail.compare_exchange_weak(tail_node,next);
         }else{
           if(next != nullptr){
-            auto t = next->m_data;
+            auto t = next->data;
             if(!head.compare_exchange_weak(old_head,next)){
               return t;
             }
